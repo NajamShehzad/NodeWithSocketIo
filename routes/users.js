@@ -6,7 +6,10 @@ exports = module.exports = function (app, mongoose) {
 
   /* GET users listing. */
   router.get('/', function (req, res, next) {
-    res.send('respond with a resource');
+    let User = new app.db.models.User({ name: "Najam", email: "najam@gmail.com" });
+    User.save().then(data => {
+      res.send(data);
+    });
   });
 
   app.use('/user', router);
