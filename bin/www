@@ -38,6 +38,7 @@ websocket.on('connection', (socket) => {
 websocket.on('error', (socket) => {
   console.log('error has happen', socket);
 });
+app.io = websocket;
 /**
  * Normalize a port into a number, string, or false.
  */
